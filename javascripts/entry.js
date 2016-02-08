@@ -13,16 +13,12 @@ class PatientBox extends Component {
       })
     });
     fetch(request, {
-      method: 'get',
-      mode: 'no-cors'
+      method: 'GET',
+      mode: 'cors'
     }).then(function(response) {
-      console.log(response);
-      return response.text(); 
+      return response.text()
     }).then(function(text) {
       console.log(text);
-    }).catch(function(err) {
-      console.log('error');
-      console.log(err);
     });
   }
 
