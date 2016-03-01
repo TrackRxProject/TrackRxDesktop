@@ -17,12 +17,42 @@ const DataTable = () => (
         </TableRow>
       </TableHeader>
     <TableBody>
+
       <TableRow>
         <TableRowColumn>Marco Botton</TableRowColumn>
         <TableRowColumn>38</TableRowColumn>
         <TableRowColumn>George Constanzo</TableRowColumn>
         <TableRowColumn>Percuset</TableRowColumn>
       </TableRow>
+
+      <TableRow>
+        <TableRowColumn>Marco Botton</TableRowColumn>
+        <TableRowColumn>38</TableRowColumn>
+        <TableRowColumn>George Constanzo</TableRowColumn>
+        <TableRowColumn>Percuset</TableRowColumn>
+      </TableRow>
+
+      <TableRow>
+        <TableRowColumn>Marco Botton</TableRowColumn>
+        <TableRowColumn>38</TableRowColumn>
+        <TableRowColumn>George Constanzo</TableRowColumn>
+        <TableRowColumn>Percuset</TableRowColumn>
+      </TableRow>
+
+      <TableRow>
+        <TableRowColumn>Marco Botton</TableRowColumn>
+        <TableRowColumn>38</TableRowColumn>
+        <TableRowColumn>George Constanzo</TableRowColumn>
+        <TableRowColumn>Percuset</TableRowColumn>
+      </TableRow>
+
+      <TableRow>
+        <TableRowColumn>Marco Botton</TableRowColumn>
+        <TableRowColumn>38</TableRowColumn>
+        <TableRowColumn>George Constanzo</TableRowColumn>
+        <TableRowColumn>Percuset</TableRowColumn>
+      </TableRow>
+
     </TableBody>
   </Table>
 );

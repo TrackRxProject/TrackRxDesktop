@@ -6,6 +6,8 @@ var Component = React.Component;
 var AppBarExampleIcon = require('./homeview');
 var DataTable = require('./table');
 
+import RaisedButton from 'material-ui/lib/raised-button';
+
 class PatientBox extends Component {
   constructor(props) {
     super(props);
@@ -54,11 +56,15 @@ class App extends Component {
       <div>
         <AppBarExampleIcon/>
         <DataTable/>
-        { /*
-        <div>
-          <PatientBox />
-        </div>
-        */ }
+        <RaisedButton 
+          label='Show Adherence Data'
+          labelColor='white'
+          style={{
+            float: 'right',
+            marginTop: 50
+          }}
+          backgroundColor='MediumPurple'
+        />
       </div>
     );
   }
