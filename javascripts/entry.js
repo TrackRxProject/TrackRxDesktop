@@ -3,6 +3,8 @@
 var React = require('react');
 var ReactDom = require('react-dom');
 var Component = React.Component;
+var AppBarExampleIcon = require('./homeview');
+var DataTable = require('./table');
 
 class PatientBox extends Component {
   constructor(props) {
@@ -23,7 +25,7 @@ class PatientBox extends Component {
 
     fetch(request, {
       method: 'GET',
-      mode: 'cors'
+      mode: 'cors' // allow requests to non-origin domain
     }).then(function(response) {
       return response.text()
     }).then(function(text) {
@@ -50,12 +52,13 @@ class App extends Component {
   render() {
     return (
       <div>
-        <div style={navStyle}>
-          <h1 style={navStyle}>TrackRx Pharmacy Application</h1>
-        </div>
+        <AppBarExampleIcon/>
+        <DataTable/>
+        { /*
         <div>
           <PatientBox />
         </div>
+        */ }
       </div>
     );
   }
