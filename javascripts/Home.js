@@ -1,14 +1,30 @@
 'use strict';
 
-var React = require('react');
-var ReactDom = require('react-dom');
-var Component = React.Component;
-var AppBarExampleIcon = require('./homeview');
-var DataTable = require('./table');
-
+import React from 'react'
 import RaisedButton from 'material-ui/lib/raised-button';
+import Table from './Table'
 
-class PatientBox extends Component {
+export default class App extends React.Component {
+  render() {
+    return (
+      <div>
+        <Table/>
+        <RaisedButton 
+          label='Show Adherence Data'
+          labelColor='white'
+          style={{
+            float: 'right',
+            marginTop: 50
+          }}
+          backgroundColor='MediumPurple'
+        />
+      </div>
+    );
+  }
+}
+
+/*
+class App extends Component {
   constructor(props) {
     super(props);
     this.state = {data: 'No bottles'};
@@ -49,34 +65,4 @@ class PatientBox extends Component {
     );
   }
 }
-
-class App extends Component {
-  render() {
-    return (
-      <div>
-        <AppBarExampleIcon/>
-        <DataTable/>
-        <RaisedButton 
-          label='Show Adherence Data'
-          labelColor='white'
-          style={{
-            float: 'right',
-            marginTop: 50
-          }}
-          backgroundColor='MediumPurple'
-        />
-      </div>
-    );
-  }
-}
-
-var navStyle = {
-  flex: 1,
-  justifyContent: 'center',
-  alignItems: 'flex-start',
-  backgroundColor: 'MediumPurple',
-  textAlign: 'center'
-};
- 
-
-ReactDom.render(<App/>, document.getElementById('content'));
+*/

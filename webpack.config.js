@@ -2,7 +2,7 @@ var webpack = require('webpack');
 
 module.exports = {
   entry: {
-    app: ['webpack/hot/dev-server', './javascripts/entry.js']
+    app: ['webpack/hot/dev-server', './javascripts/index.js']
   },
 
   output: {
@@ -15,6 +15,8 @@ module.exports = {
     contentBase: './public',
     publicPath: 'http://localhost:8080/built/'
   },
+
+  devtool: "source-map",
 
   module: {
     loaders: [
