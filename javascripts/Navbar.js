@@ -1,8 +1,7 @@
 import React from 'react';
 import AppBar from 'material-ui/lib/app-bar';
 import RaisedButton from 'material-ui/lib/raised-button';
-import LeftNav from 'material-ui/lib/left-nav';
-import Left from './Left.js';
+import LeftNav from './LeftNav.js';
 import MenuItem from 'material-ui/lib/menus/menu-item';
 import PropTypes from 'react-router';
 
@@ -11,7 +10,7 @@ export default class NavBar extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      open: false
+      leftNavOpen: false
     };
   }
 
@@ -19,9 +18,9 @@ export default class NavBar extends React.Component {
     router: React.PropTypes.object.isRequired,
   }
 
-  handleToggle() { 
+  toggleLeftNav() { 
     this.setState({
-      open: !this.state.open
+      leftNavOpen: !this.state.leftNavOpen
     });
   }
 
@@ -30,9 +29,9 @@ export default class NavBar extends React.Component {
       <div>
         <AppBar
           title="TrackRx Pharmacy Application" 
-          onLeftIconButtonTouchTap={ this.handleToggle.bind(this) }
+          onLeftIconButtonTouchTap={ this.toggleLeftNav.bind(this) }
           iconClassNameRight="muidocs-icon-navigation-expand-more"
-          isInitiallyOpen={ true }
+          isInitiallyleftNavOpen={ true }
           style={{backgroundColor: 'MediumPurple'}}>
           <RaisedButton label="Profile"
             style={{
@@ -41,10 +40,7 @@ export default class NavBar extends React.Component {
           <RaisedButton label="Logout"/> 
         </AppBar>
 
-        <LeftNav open={ this.state.open }>
-          <Left toggle={ this.handleToggle.bind(this) } />
-        </LeftNav>
-
+        <LeftNav open={ this.state.leftNavOpen } toggle={ this.toggleLeftNav.bind(this) }/>
       </div>
     );
   }

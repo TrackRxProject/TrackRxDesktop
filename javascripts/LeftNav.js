@@ -1,4 +1,5 @@
 import React from 'react';
+import LNav from 'material-ui/lib/left-nav';
 import PropTypes from 'react-router';
 import Menu from 'material-ui/lib/menus/menu';
 import MenuItem from 'material-ui/lib/menus/menu-item';
@@ -12,7 +13,7 @@ const itemStyle = {
   padding: '2px 10px'
 };
 
-export default class Left extends React.Component {
+export default class LeftNav extends React.Component {
 
   constructor(props) {
     super(props);
@@ -22,16 +23,21 @@ export default class Left extends React.Component {
     router: React.PropTypes.object.isRequired,
   }
 
+  NavLink(to, text) {
+    return (
+      <Link to={to} style={linkStyle} onClick={this.props.toggle}>
+	<MenuItem primaryText={text} style={itemStyle}/>
+      </Link>
+    );
+  }
+
   render() {
     return (
-      <div>
-        <Link to='/' style={linkStyle} onClick={ this.props.toggle }>
-          <MenuItem primaryText='Home' style={itemStyle}/>
-        </Link>
-        <Link to='/Patients' style={linkStyle} onClick={ this.props.toggle }>
-          <MenuItem primaryText='Patients' style={itemStyle}/>
-        </Link>
-      </div>
+      <LNav open={ this.props.open }>
+        { this.NavLink('/', 'Home') }
+        { this.NavLink('/patients', 'Patients') }
+      </LNav>
     );
   }
 }
+
