@@ -13,6 +13,17 @@ const itemStyle = {
   padding: '2px 10px'
 };
 
+const menuItems = [
+  {
+    path: '/',
+    text: 'Home'
+  },
+  {
+    path: '/patients',
+    text: 'Patients'
+  }
+];
+
 export default class LeftNav extends React.Component {
 
   constructor(props) {
@@ -23,9 +34,9 @@ export default class LeftNav extends React.Component {
     router: React.PropTypes.object.isRequired,
   }
 
-  NavLink(to, text) {
+  NavLink(to, text, key) {
     return (
-      <Link to={to} style={linkStyle} onClick={this.props.toggle}>
+      <Link to={to} style={linkStyle} onClick={this.props.toggle} key={key}>
 	<MenuItem primaryText={text} style={itemStyle}/>
       </Link>
     );
@@ -34,8 +45,9 @@ export default class LeftNav extends React.Component {
   render() {
     return (
       <LNav open={ this.props.open }>
-        { this.NavLink('/', 'Home') }
-        { this.NavLink('/patients', 'Patients') }
+        {menuItems.map((menuItem, index) => (
+          this.NavLink(menuItem.path, menuItem.text, index)
+        ))}
       </LNav>
     );
   }
