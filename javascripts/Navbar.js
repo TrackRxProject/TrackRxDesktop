@@ -2,21 +2,17 @@ import React from 'react';
 import AppBar from 'material-ui/lib/app-bar';
 import RaisedButton from 'material-ui/lib/raised-button';
 import LeftNav from 'material-ui/lib/left-nav';
+import Left from './Left.js';
 import MenuItem from 'material-ui/lib/menus/menu-item';
 import PropTypes from 'react-router';
-
-let menuItems = [
-{ route: '/', text: 'Home', key: 0},
-{ route: 'about', text: 'About', key: 1},
-{ route: 'contact', text: 'Contact', key: 2},
-];
 
 export default class NavBar extends React.Component {
 
   constructor(props) {
     super(props);
-    this.state = {open: false};
-    this._onLeftNavChange = this._onLeftNavChange.bind(this);
+    this.state = {
+      open: false
+    };
   }
 
   contextTypes: {
@@ -24,14 +20,9 @@ export default class NavBar extends React.Component {
   }
 
   handleToggle() { 
-    this.setState({open: !this.state.open});
-  }
-
-  _onLeftNavChange(e, key, payload) {
-    // Do DOM Diff refresh
-    console.log(payload);
-
-    this.context.router.push('/');
+    this.setState({
+      open: !this.state.open
+    });
   }
 
   render() {
@@ -50,10 +41,9 @@ export default class NavBar extends React.Component {
           <RaisedButton label="Logout"/> 
         </AppBar>
 
-        <LeftNav 
-          open={this.state.open}
-          menuItems={menuItems} 
-          onChange={this._onLeftNavChange} />
+        <LeftNav open={ this.state.open }>
+          <Left />
+        </LeftNav>
 
       </div>
     );
