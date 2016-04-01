@@ -42,7 +42,7 @@ export default class NavBar extends React.Component {
         </AppBar>
 
         <LeftNav open={ this.state.open }>
-          <Left />
+          <Left toggle={ this.handleToggle.bind(this) } />
         </LeftNav>
 
       </div>
