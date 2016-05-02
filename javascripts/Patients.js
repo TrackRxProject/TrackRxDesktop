@@ -23,7 +23,7 @@ export default class Patients extends React.Component {
 
   componentDidMount() {
     var chartSums = [];
-    var request = new Request('http://trackrx.xyz:5555/adherence/1');
+    var request = new Request('http://trackrx.xyz:8000/adherence/1');
     var that = this;
     fetch(request, {
       method: 'GET',
