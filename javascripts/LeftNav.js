@@ -20,7 +20,7 @@ const menuItems = [
   },
   {
     path: '/patients',
-    text: 'Patients'
+    text: 'Adherence'
   }
 ];
 
